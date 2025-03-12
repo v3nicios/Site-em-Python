@@ -30,7 +30,7 @@ if Page_cliente == "Casas de Hogwarts":
         search_query = st.text_input("Pesquisar personagem:")
 
         
-        def eh_bruxo_para_string(eh_bruxo):
+        def E_bruxo(eh_bruxo):
             return "BRUXO" if eh_bruxo else "TROUXA"
 
         def estuda_em_hog(estudante):
@@ -86,7 +86,7 @@ if Page_cliente == "Casas de Hogwarts":
                         st.write(f" **Patronus:** {character['patronus']}")
 
                         st.write(
-                            f" **Bruxo/Trouxa?:** {eh_bruxo_para_string(character['wizard'])}"
+                            f" **Bruxo/Trouxa?:** {E_bruxo(character['wizard'])}"
                         )
                         st.write(
                             f" **Estudante de Hogwarts?:** {estuda_em_hog(character['hogwartsStudent'])}"
@@ -137,7 +137,7 @@ if Page_cliente == "Casas de Hogwarts":
         search_query = st.text_input("Pesquisar personagem:")
 
         
-        def eh_bruxo_para_string(eh_bruxo):
+        def E_bruxo(eh_bruxo):
             return "BRUXO" if eh_bruxo else "TROUXA"
 
         def estuda_em_hog(estudante):
@@ -193,7 +193,7 @@ if Page_cliente == "Casas de Hogwarts":
                         st.write(f" **Patronus:** {character['patronus']}")
 
                         st.write(
-                            f" **Bruxo/Trouxa?:** {eh_bruxo_para_string(character['wizard'])}"
+                            f" **Bruxo/Trouxa?:** {E_bruxo(character['wizard'])}"
                         )
                         st.write(
                             f" **Estudante de Hogwarts?:** {estuda_em_hog(character['hogwartsStudent'])}"
@@ -243,7 +243,7 @@ if Page_cliente == "Casas de Hogwarts":
         search_query = st.text_input("Pesquisar personagem:")
 
         
-        def eh_bruxo_para_string(eh_bruxo):
+        def E_bruxo(eh_bruxo):
             return "BRUXO" if eh_bruxo else "TROUXA"
 
         def estuda_em_hog(estudante):
@@ -299,7 +299,7 @@ if Page_cliente == "Casas de Hogwarts":
                         st.write(f" **Patronus:** {character['patronus']}")
 
                         st.write(
-                            f" **Bruxo/Trouxa?:** {eh_bruxo_para_string(character['wizard'])}"
+                            f" **Bruxo/Trouxa?:** {E_bruxo(character['wizard'])}"
                         )
                         st.write(
                             f" **Estudante de Hogwarts?:** {estuda_em_hog(character['hogwartsStudent'])}"
@@ -349,7 +349,7 @@ if Page_cliente == "Casas de Hogwarts":
         search_query = st.text_input("Pesquisar personagem:")
 
         
-        def eh_bruxo_para_string(eh_bruxo):
+        def E_bruxo(eh_bruxo):
             return "BRUXO" if eh_bruxo else "TROUXA"
 
         def estuda_em_hog(estudante):
@@ -405,7 +405,7 @@ if Page_cliente == "Casas de Hogwarts":
                         st.write(f" **Patronus:** {character['patronus']}")
 
                         st.write(
-                            f" **Bruxo/Trouxa?:** {eh_bruxo_para_string(character['wizard'])}"
+                            f" **Bruxo/Trouxa?:** {E_bruxo(character['wizard'])}"
                         )
                         st.write(
                             f" **Estudante de Hogwarts?:** {estuda_em_hog(character['hogwartsStudent'])}"
@@ -455,7 +455,7 @@ if Page_cliente == "Todos os personagens":
     search_query = st.text_input("Pesquisar personagem:")
 
     
-    def eh_bruxo_para_string(eh_bruxo):
+    def E_bruxo(eh_bruxo):
         return "BRUXO" if eh_bruxo else "TROUXA"
 
     def estuda_em_hog(estudante):
@@ -509,7 +509,7 @@ if Page_cliente == "Todos os personagens":
                     st.write(f" **Patronus:** {character['patronus']}")
 
                     st.write(
-                        f" **Bruxo/Trouxa?:** {eh_bruxo_para_string(character['wizard'])}"
+                        f" **Bruxo/Trouxa?:** {E_bruxo(character['wizard'])}"
                     )
                     st.write(
                         f" **Estudante de Hogwarts?:** {estuda_em_hog(character['hogwartsStudent'])}"
