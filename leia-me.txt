@@ -1,0 +1,5 @@
+Olá, 
+criei esta aplicação para aprofundar meu conhecimento tanto no Python 
+quanto em como consumir uma API utilizei duas fontes de API uma e a https://hp-api.onrender.com/?ref=freepublicapis.com 
+e a outra https://potterdb.com/ ainda não está finalizado, pretendo aprimorar mais algumas coisas não só no código, 
+mas no front também   
