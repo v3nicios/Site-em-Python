@@ -59,7 +59,7 @@ if Page_cliente == "Casas de Hogwarts":
                         if "image" in character and character["image"]:
                             
                             img_html = f"""
-                            <img src="{character['image']}" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%; box-sizing: border-box;">
+                            <img src="{character['image']}" style="width: 300px; height: 300px; object-fit: fill; border-radius: 12%; box-sizing: border-box;">
                             """
                             st.markdown(img_html, unsafe_allow_html=True)
                         else:
@@ -166,7 +166,7 @@ if Page_cliente == "Casas de Hogwarts":
                         if "image" in character and character["image"]:
                             
                             img_html = f"""
-                            <img src="{character['image']}" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%; box-sizing: border-box;">
+                            <img src="{character['image']}" style="width: 300px; height: 300px; object-fit: fill; border-radius: 12%; box-sizing: border-box;">
                             """
                             st.markdown(img_html, unsafe_allow_html=True)
                         else:
@@ -272,7 +272,7 @@ if Page_cliente == "Casas de Hogwarts":
                         if "image" in character and character["image"]:
                             
                             img_html = f"""
-                            <img src="{character['image']}" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%; box-sizing: border-box;">
+                            <img src="{character['image']}" style="width: 300px; height: 300px; object-fit: fill; border-radius: 12%; box-sizing: border-box;">
                             """
                             st.markdown(img_html, unsafe_allow_html=True)
                         else:
@@ -378,7 +378,7 @@ if Page_cliente == "Casas de Hogwarts":
                         if "image" in character and character["image"]:
                             
                             img_html = f"""
-                            <img src="{character['image']}" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%; box-sizing: border-box;">
+                            <img src="{character['image']}" style="width: 300px; height: 300px; object-fit: fill; border-radius: 12%; box-sizing: border-box;">
                             """
                             st.markdown(img_html, unsafe_allow_html=True)
                         else:
@@ -482,7 +482,7 @@ if Page_cliente == "Todos os personagens":
                     if "image" in character and character["image"]:
                         
                         img_html = f"""
-                        <img src="{character['image']}" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%; box-sizing: border-box;">
+                        <img src="{character['image']}" style="width: 300px; height: 300px; object-fit: fill; border-radius: 12%; box-sizing: border-box;">
                         """
                         st.markdown(img_html, unsafe_allow_html=True)
                     else:
@@ -541,45 +541,44 @@ if Page_cliente == "Todos os personagens":
                 
                 st.markdown("***")
 
+
 if Page_cliente == "Todos os feitiços conhecidos":
-        def fetch_data():
-            url = "https://api.potterdb.com/v1/spells"
-            response = requests.get(url)
+    def fetch_data():
+        url = "https://api.potterdb.com/v1/spells"
+        response = requests.get(url)
 
-            if response.status_code == 200:
-                return response.json()  
-            else:
-                st.error("Erro ao buscar API")
-                return {}
+        if response.status_code == 200:
+            return response.json()  
+        else:
+            st.error("Erro ao buscar API")
+            return {}
 
-        data = fetch_data()
+    data = fetch_data()
 
-        
-        if isinstance(data, dict) and 'data' in data and isinstance(data['data'], list):
-            for character in data['data']:  
-                with st.container():
-                    spell_name = character['attributes']['name']  
-                    st.subheader(spell_name)
-
+    if isinstance(data, dict) and 'data' in data and isinstance(data['data'], list):
+        for character in data['data']:  
+            with st.container():
+                spell_name = character['attributes']['name']  
+                st.subheader(spell_name)
                 
-                    st.write(f"**Categoria:** {character['attributes'].get('category', 'Desconhecida')}")
-                    st.write(f"**Efeito:** {character['attributes'].get('effect', 'Sem descrição')}")
-
-                
+                col1, col2 = st.columns([1, 2])  
+                with col1:
                     if character['attributes'].get('image'):
-                        
-                        
                         img_html = f"""
-                        <img src="{character['attributes']['image']}" style="width: 700px; height: 500px; border-radius: 10%;">
+                        <img src="{character['attributes']['image']}" style="width: 170px; height: 150px; border-radius: 10%;">
                         """
                         st.markdown(img_html, unsafe_allow_html=True)
 
-                    st.markdown("***")  
-        else:
-            st.error("Os dados não estão no formato esperado ou estão vazios.")
+                with col2:
+                    st.write(f"**Categoria:** {character['attributes'].get('category', 'Desconhecida')}")
+                    st.write(f"**Efeito:** {character['attributes'].get('effect', 'Sem descrição')}")
+                    st.write(f"**Encantamento:** {character['attributes'].get('incantation', 'Sem descrição')}")
+                    st.write(f"**Luz:** {character['attributes'].get('light', 'Sem descrição')}")
 
+                st.markdown("***")  
+    else:
+        st.error("Os dados não estão no formato esperado ou estão vazios.")
 
-            
 
 
 
